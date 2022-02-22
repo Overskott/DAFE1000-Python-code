@@ -15,9 +15,6 @@ plt.grid()
 function_v = np.vectorize(function)
 plt.plot(x_vector, function_v(x_vector))
 
-
-
-
 while error < difference*2:
 
     c = (a + b) / 2
@@ -26,7 +23,6 @@ while error < difference*2:
     b_func = function(b)
     c_func = function(c)
 
-
     if a_func * c_func > 0:
         a = c
     else:
@@ -34,18 +30,9 @@ while error < difference*2:
 
     difference = np.abs(b_func - a_func)
 
-    print(c)
-    plt.plot(c, function(c), 'x')
-
-
-
 c = (a + b) / 2
 
 print('Root: ', c)
-
-
 plt.plot(c, function(c), 'ro')
-
-
 plt.show()
 
